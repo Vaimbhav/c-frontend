@@ -2,6 +2,7 @@
 	"name": "c-frontend",
 	"version": "0.1.0",
 	"private": true,
+	"proxy": "https://chatbot-backend-krm9.onrender.com",
 	"dependencies": {
 		"@headlessui/react": "^2.2.4",
 		"@heroicons/react": "^2.2.0",
@@ -29,7 +30,6 @@
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {
-		"postinstall": "npm install --legacy-peer-deps",
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
