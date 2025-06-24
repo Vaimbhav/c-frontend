@@ -21,107 +21,29 @@ import ChatHistoryPage from './pages/ChatHistoryPage';
 import {fetchChatHistoryAsync} from './features/chat/ChatThunk';
 
 const App = () => {
-	// const dispatch = useDispatch();
-	// const user = useSelector(selectLoggedInUser);
-	// const userChecked = useSelector(selectUserChecked);
+	const dispatch = useDispatch();
+	const user = useSelector(selectLoggedInUser);
+	const userChecked = useSelector(selectUserChecked);
 
-	// useEffect(() => {
-	// 	dispatch(checkAuthAsync());
-	// }, [dispatch]);
+	useEffect(() => {
+		dispatch(checkAuthAsync());
+	}, [dispatch]);
 
-	// useEffect(() => {
-	// 	if (user) {
-	// 		dispatch(fetchChatHistoryAsync());
-	// 		dispatch(fetchLoggedInUserAsync());
-	// 	}
-	// }, [dispatch, user]);
+	useEffect(() => {
+		if (user) {
+			dispatch(fetchChatHistoryAsync());
+			dispatch(fetchLoggedInUserAsync());
+		}
+	}, [dispatch, user]);
 
 	return (
 		<div>
-			// {
-				// userChecked && 
-		// (
-					// <Route
-					// 	path="/"
-					// 	element={
-					// 		<Protected>
-					// 			<HomePage />
-					// 		</Protected>
-					// 	}
-					// />
-		
-				<Routes>
-					
-
-					<Route
-						path="/profile"
-						element={
-							<Protected>
-								<ProfilePage />
-							</Protected>
-						}
-					/>
-
-					<Route
-						path="/"
-						element={
-							// <Protected>
-								<ChatPage />
-							// </Protected>
-						}
-					/>
-
-					<Route
-						path="/login"
-						element={
-							!user ? <LoginPage /> : <Navigate to="/" replace />
-						}
-					/>
-
-					<Route
-						path="/chat/history"
-						element={
-							<Protected>
-								<ChatHistoryPage />
-							</Protected>
-						}
-					/>
-
-					<Route
-						path="/signup"
-						element={
-							!user ? <SignUpPage /> : <Navigate to="/" replace />
-						}
-					/>
-
-					<Route path="/logout" element={<LogoutPage />} />
-
-					<Route
-						path="/premium"
-						element={
-							<Protected>
-								<PremiumPage />
-							</Protected>
-						}
-					/>
-
-					<Route path="*" element={<NotFoundPage></NotFoundPage>} />
-				</Routes>
-			// )
-// }
+			<Routes>
+				<Route path="/" element={<ChatPage />} />
+				<Route path="*" element={<NotFoundPage></NotFoundPage>} />
+			</Routes>
 		</div>
 	);
 };
 
 export default App;
-
-// {
-// 	/* <div>
-//     <Routes>
-//         <Route path='/' element={<HomePage />} />
-//         <Route path='/login' element={<LoginPage />} />
-//         <Route path='/signup' element={<SignUpPage />} />
-//         <Route path='/profile' element={<ProfilePage />} />
-//     </Routes>
-// </div> */
-// }
