@@ -40,14 +40,14 @@ const App = () => {
 		<div>
 			{userChecked && (
 				<Routes>
-					<Route
-						path="/"
-						element={
-							<Protected>
-								<HomePage />
-							</Protected>
-						}
-					/>
+					// <Route
+					// 	path="/"
+					// 	element={
+					// 		<Protected>
+					// 			<HomePage />
+					// 		</Protected>
+					// 	}
+					// />
 
 					<Route
 						path="/profile"
@@ -59,11 +59,11 @@ const App = () => {
 					/>
 
 					<Route
-						path="/chat"
+						path="/"
 						element={
-							<Protected>
+							// <Protected>
 								<ChatPage />
-							</Protected>
+							// </Protected>
 						}
 					/>
 
