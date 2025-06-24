@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar'
 const ChatPage = () => {
     return (
         <div>
-            <Navbar />
+{/*             <Navbar /> */}
             <Chat />
         </div>
     )
