@@ -21,25 +21,26 @@ import ChatHistoryPage from './pages/ChatHistoryPage';
 import {fetchChatHistoryAsync} from './features/chat/ChatThunk';
 
 const App = () => {
-	const dispatch = useDispatch();
-	const user = useSelector(selectLoggedInUser);
-	const userChecked = useSelector(selectUserChecked);
+	// const dispatch = useDispatch();
+	// const user = useSelector(selectLoggedInUser);
+	// const userChecked = useSelector(selectUserChecked);
 
-	useEffect(() => {
-		dispatch(checkAuthAsync());
-	}, [dispatch]);
+	// useEffect(() => {
+	// 	dispatch(checkAuthAsync());
+	// }, [dispatch]);
 
-	useEffect(() => {
-		if (user) {
-			dispatch(fetchChatHistoryAsync());
-			dispatch(fetchLoggedInUserAsync());
-		}
-	}, [dispatch, user]);
+	// useEffect(() => {
+	// 	if (user) {
+	// 		dispatch(fetchChatHistoryAsync());
+	// 		dispatch(fetchLoggedInUserAsync());
+	// 	}
+	// }, [dispatch, user]);
 
 	return (
 		<div>
-			{userChecked && (
-				<Routes>
+			// {
+				// userChecked && 
+		// (
 					// <Route
 					// 	path="/"
 					// 	element={
@@ -48,6 +49,9 @@ const App = () => {
 					// 		</Protected>
 					// 	}
 					// />
+		
+				<Routes>
+					
 
 					<Route
 						path="/profile"
@@ -103,7 +107,8 @@ const App = () => {
 
 					<Route path="*" element={<NotFoundPage></NotFoundPage>} />
 				</Routes>
-			)}
+			// )
+// }
 		</div>
 	);
 };
